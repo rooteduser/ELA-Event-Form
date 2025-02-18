@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="siteTitle">Loading...</title>
+    <title id="siteTitle">ELA Form</title>
     <link rel="stylesheet" href="styles.css">
     <script src="config.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -67,8 +67,7 @@
 
     <script>
         // Set dynamic content from config
-        document.getElementById('siteTitle').textContent = SITE_TITLE;
-        document.querySelector('.g-recaptcha').setAttribute('data-sitekey', RECAPTCHA_SITE_KEY);
+        document.querySelector('.g-recaptcha').setAttribute('data-sitekey', '6LeaGtoqAAAAANNROn9M3Q0iUQhgzvMkPLHaSf6A');
 
 
         function submitForm(e) {
@@ -110,9 +109,8 @@
 
         function sendFormData(formData, submitButton, form) {
             const data = Object.fromEntries(formData);
-            console.log('Sending to URL:', APPS_SCRIPT_URL);  // Debug log
 
-            fetch(APPS_SCRIPT_URL, {
+            fetch('https://script.google.com/macros/s/AKfycbyw8JLXcjwfmsNPbyxzb1iLaTrdzmqxZOcjNw9qr6WZDfhlR7wEHnN3sQEZHNAAF0fM/exec', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
