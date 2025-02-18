@@ -70,10 +70,16 @@
         document.getElementById('siteTitle').textContent = config.SITE_TITLE;
         document.querySelector('.g-recaptcha').setAttribute('data-sitekey', config.RECAPTCHA_SITE_KEY);
 
+        // Add console logs for debugging
+        console.log('Config loaded:', window.config);
+
         function submitForm(e) {
             e.preventDefault();
+            console.log('Form submitted');  // Debug log
             
             const recaptchaResponse = grecaptcha.getResponse();
+            console.log('reCAPTCHA response:', recaptchaResponse);  // Debug log
+            
             if (!recaptchaResponse) {
                 alert('Please complete the reCAPTCHA');
                 return;
@@ -89,6 +95,7 @@
 
             const fileInput = document.getElementById('payment');
             const file = fileInput.files[0];
+            console.log('File selected:', file?.name);  // Debug log
             
             if (file) {
                 const reader = new FileReader();
@@ -105,6 +112,7 @@
 
         function sendFormData(formData, submitButton, form) {
             const data = Object.fromEntries(formData);
+            console.log('Sending to URL:', config.APPS_SCRIPT_URL);  // Debug log
 
             fetch(config.APPS_SCRIPT_URL, {
                 method: 'POST',
@@ -114,7 +122,8 @@
                 },
                 mode: 'no-cors'
             })
-            .then(() => {
+            .then(response => {
+                console.log('Response received');  // Debug log
                 alert('Form submitted successfully!');
                 form.reset();
                 grecaptcha.reset();
