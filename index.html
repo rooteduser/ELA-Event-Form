@@ -3,30 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="siteTitle">ELA Form</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="config.js"></script>
+    <title>ENCHANTOPIA 2.0 - ELA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Pirata+One&family=Shafarik&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">ELA</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <header>
+        <div class="logo-container">
+            <img src="img/ELA LOGO.png" alt="ELA Logo">
+            <img src="img/advitya.png" alt="Advitya Logo">
+            <img src="img/image copy.png" alt="VIT Bhopal Logo">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Welcome ENCHANTOPIA 2.0</h1>
+        <p>🎭 Enchantopia 2.0 – ELA's Annual Carnival of Games!</p>
+
+        <p>Put on your best game face and dive into a day of cinematic fun, challenges, and laughter! From improv battles to life-size Snakes & Ladders, meme wars, and more, there's something for everyone. Test your luck, showcase your wit, and compete for exciting rewards!</p>
+        
+        <p>🪞 This year's AdVITya features:</p>
+        <ul>
+            <li>🎙️ Improv Challenge – Funniest mimic wins!</li>
+            <li>🎱 Ping-Pong – Aim, throw, and score.</li>
+            <li>🐍 Life-size Snakes & Ladders – Be the pawn, dodge the snakes!</li>
+            <li>🟣 Twisters – Stay balanced or fall out!</li>
+            <li>🧮 Heads-Up – Trivia meets charades.</li>
+            <li>🤳🏽 Meme Wars – Caption & conquer.</li>
+            <li>📢 Tongue Twisters – Fastest, clearest wins!</li>
+            <li>🎯 Spin the Wheel – Try your luck.</li>
+            <li>🍃 Jungle Chest – Solve the mystery!</li>
         </ul>
-    </nav>
+        
+        <p>Will you be the one to take home the winning hamper? Come find out!</p>
+        
+        <div class="event-details">
+            <p>📅 Event Details:</p>
+            <p>🗓️ Date: 20 Feb 2025 (Thursday)</p>
+            <p>⏰ Time: 10:00 AM - 3:00 PM</p>
+            <p>📍 Venue: Multipurpose Hall (MPH)</p>
+            <p>🎟️ Register for Rs.99/- before 19 Feb 2025!</p>
+        </div>
 
-    <main>
-        <section class="hero">
-            <h1>Welcome to Our Website</h1>
-            <p>Please fill out the form below</p>
-        </section>
-
-        <section id="formContainer" class="contact-form">
-            <h2>Contact Us</h2>
+        <!-- Registration Form Section -->
+        <section class="contact-form">
+            <h2>Registration Form</h2>
             <form id="contactForm" onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -56,26 +80,16 @@
 
                 <div class="g-recaptcha" data-sitekey="6LeaGtoqAAAAANNROn9M3Q0iUQhgzvMkPLHaSf6A"></div>
                 
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="submit-btn">Register Now</button>
             </form>
         </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script>
-        // Set dynamic content from config
-
-
         function submitForm(e) {
             e.preventDefault();
-            console.log('Form submitted');  // Debug log
             
             const recaptchaResponse = grecaptcha.getResponse();
-            console.log('reCAPTCHA response:', recaptchaResponse);  // Debug log
-            
             if (!recaptchaResponse) {
                 alert('Please complete the reCAPTCHA');
                 return;
@@ -91,7 +105,6 @@
 
             const fileInput = document.getElementById('payment');
             const file = fileInput.files[0];
-            console.log('File selected:', file?.name);  // Debug log
             
             if (file) {
                 const reader = new FileReader();
@@ -109,7 +122,7 @@
         function sendFormData(formData, submitButton, form) {
             const data = Object.fromEntries(formData);
 
-            fetch('https://script.google.com/macros/s/AKfycbyw8JLXcjwfmsNPbyxzb1iLaTrdzmqxZOcjNw9qr6WZDfhlR7wEHnN3sQEZHNAAF0fM/exec', {
+            fetch('YOUR_APPS_SCRIPT_URL', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
@@ -118,7 +131,6 @@
                 mode: 'no-cors'
             })
             .then(response => {
-                console.log('Response received');  // Debug log
                 alert('Form submitted successfully!');
                 form.reset();
                 grecaptcha.reset();
@@ -129,7 +141,7 @@
             })
             .finally(() => {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Submit';
+                submitButton.textContent = 'Register Now';
             });
         }
     </script>
