@@ -1,0 +1,5 @@
+# Ignore sensitive files
+config.js
+.env
+.env.local
+.vercel 
