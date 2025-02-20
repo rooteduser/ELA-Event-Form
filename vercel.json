@@ -10,15 +10,27 @@
       "use": "@vercel/static"
     },
     {
+      "src": "images/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "img/**/*",
+      "use": "@vercel/static"
+    },
+    {
       "src": "medium/css/**/*.css",
       "use": "@vercel/static"
     },
     {
-      "src": "*.js",
+      "src": "medium/js/**/*.js",
       "use": "@vercel/static"
     },
     {
-      "src": "img/**",
+      "src": "medium/images/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/**/*.js",
       "use": "@vercel/static"
     }
   ],
@@ -28,12 +40,28 @@
       "dest": "/css/$1"
     },
     {
-      "src": "/medium/css/(.*)",
-      "dest": "/medium/css/$1"
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
     },
     {
       "src": "/img/(.*)",
       "dest": "/img/$1"
+    },
+    {
+      "src": "/medium/css/(.*)",
+      "dest": "/medium/css/$1"
+    },
+    {
+      "src": "/medium/js/(.*)",
+      "dest": "/medium/js/$1"
+    },
+    {
+      "src": "/medium/images/(.*)",
+      "dest": "/medium/images/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/js/$1"
     },
     {
       "src": "/(.*)",
