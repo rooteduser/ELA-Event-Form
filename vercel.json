@@ -32,6 +32,10 @@
     {
       "src": "js/**/*.js",
       "use": "@vercel/static"
+    },
+    {
+      "src": "fontawesome-free-5.12.1-web/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -62,6 +66,30 @@
     {
       "src": "/js/(.*)",
       "dest": "/js/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/css/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/css/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/js/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/js/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/less/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/less/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/scss/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/scss/$1"
+    },
+    {
+      "src": "/fontawesome-free-5.12.1-web/webfonts/(.*)",
+      "dest": "/fontawesome-free-5.12.1-web/webfonts/$1"
     },
     {
       "src": "/(.*)",
