@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/img/ELA LOGO.png" alt="ELA Logo">
+            <img src="/img/advitya.png" alt="Advitya Logo">
+            <img src="/img/image copy.png" alt="VIT Bhopal Logo">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Event Registration</h1>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="file" id="fileInput" required>
+            <button type="submit">Register</button>
+        </form>
+        <p id="status"></p>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+    
+            // Form data
+            let formData = new FormData();
+            formData.append("name", document.getElementById("name").value);
+            formData.append("email", document.getElementById("email").value);
+            formData.append("phone", document.getElementById("phone").value);
+            formData.append("file", document.getElementById("file").files[0]);
+    
+            // Upload file to Google Drive
+            let fileURL = await uploadFileToDrive(document.getElementById("file").files[0]);
+    
+            // Send form data to Google Apps Script backend
+            fetch("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    phone: document.getElementById("phone").value,
+                    fileURL: fileURL
+                }),
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error("Error:", error));
+        });
+    
+        // Function to upload the file to Google Drive
+        async function uploadFileToDrive(file) {
+            let formData = new FormData();
+            formData.append("file", file);
+    
+            let response = await fetch("https://script.google.com/a/macros/vitbhopal.ac.in/s/AKfycbwc6oNLss9ghD5TpRNzAFy_u_TKiQWG5Na94gyJ7Gg7VHoK6_KRB6ckWadReXVGPYhb/exec", {
+                method: "POST",
+                body: formData
+            });
+    
+            let result = await response.json();
+            return result.fileURL;  
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('img/image.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    cursor: url('animated-cursor.gif'), auto;
+}
+
+/* Floating Header */
+header {
+    background: rgba(0, 0, 0, 0.6); /* Light transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 30px;
+    position: fixed;
+    top: 0;
+    left: 10;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+/* Glass Effect Container */
+.container {
+    background: rgba(255, 255, 255, 0.15); /* Light transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+/* Input Fields */
+input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(10, 8, 8);
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(33, 25, 25, 0.7);
+}
+
+/* Button */
+button {
+    background: rgba(198, 179, 103, 0.8);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 153, 0, 0.8);
+}
