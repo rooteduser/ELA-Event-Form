@@ -94,6 +94,70 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    },
+    {
+      "src": "/battleofwits",
+      "dest": "/battleofwits.html"
+    },
+    {
+      "src": "/battleofwits.html",
+      "dest": "/battleofwits.html"
+    },
+    {
+      "src": "/blogs",
+      "dest": "/blogs.html"
+    },
+    {
+      "src": "/blogs.html",
+      "dest": "/blogs.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/contact.html",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/enchantopia",
+      "dest": "/enchantopia.html"
+    },
+    {
+      "src": "/enchantopia.html",
+      "dest": "/enchantopia.html"
+    },
+    {
+      "src": "/events",
+      "dest": "/events.html"
+    },
+    {
+      "src": "/events.html",
+      "dest": "/events.html"
+    },
+    {
+      "src": "/gameoflores",
+      "dest": "/gameoflores.html"
+    },
+    {
+      "src": "/gameoflores.html",
+      "dest": "/gameoflores.html"
+    },
+    {
+      "src": "/nostalgia",
+      "dest": "/nostalgia.html"
+    },
+    {
+      "src": "/nostalgia.html",
+      "dest": "/nostalgia.html"
+    },
+    {
+      "src": "/ragend",
+      "dest": "/ragend.html"
+    },
+    {
+      "src": "/ragend.html",
+      "dest": "/ragend.html"
     }
   ]
 }
