@@ -24,8 +24,8 @@
       "dest": "/styles.css"
     },
     {
-      "src": "/style.css",
-      "dest": "/style.css"
+      "src": ".css/styles.css",
+      "dest": ".css/style.css"
     },
     {
       "src": "/img/(.*)",
@@ -36,4 +36,4 @@
       "dest": "/index.html"
     }
   ]
-} 
+}
