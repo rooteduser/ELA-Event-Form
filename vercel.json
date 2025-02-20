@@ -40,6 +40,10 @@
   ],
   "routes": [
     {
+      "src": "/app.js",
+      "dest": "/app.js"
+    },
+    {
       "src": "/css/(.*)",
       "dest": "/css/$1"
     },
