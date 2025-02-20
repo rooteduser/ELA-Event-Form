@@ -24,8 +24,8 @@
       "dest": "/styles.css"
     },
     {
-      "src": ".css/styles.css",
-      "dest": ".css/style.css"
+      "src": "css/styles.css",
+      "dest": "css/style.css"
     },
     {
       "src": "/img/(.*)",
